@@ -9,3 +9,7 @@ keystrokes 击键，按键
 pertain 从属，归属
 bottleneck 瓶颈
 metaphor 暗喻，隐喻
+precedence 优先
+typographic 排字上的
+procedural 程序上的，程序性的
+prescribe 规定，开处方
