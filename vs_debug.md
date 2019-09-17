@@ -8,3 +8,11 @@ WinBase.h文件中wWinMain函数的声明是带批注的，加上与函数声明
 
 3. 错误：MSB6006 “CL.exe”已退出，代码为 2
 出错原因为一个类内部的定义的方法没有写return语句。或变量没有初始化。
+
+4. 控件安装：
+    在64位Windows下：
+    64位exe和dll在目录c:\windows\system32目录下；
+    32位exe和dll在目录c:\windows\syswow64目录下；
+    所以要注意：
+    在win64位系统下注册32位ocx或dll需要将32位ocx或dll拷贝到c:\windows\syswow64\目录下。
+    且注册要用c:\windows\syswow64\regsvr32 xxxxxxx.ocx或dll
