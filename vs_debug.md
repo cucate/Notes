@@ -16,3 +16,11 @@ WinBase.h文件中wWinMain函数的声明是带批注的，加上与函数声明
     所以要注意：
     在win64位系统下注册32位ocx或dll需要将32位ocx或dll拷贝到c:\windows\syswow64\目录下。
     且注册要用c:\windows\syswow64\regsvr32 xxxxxxx.ocx或dll
+
+5. LINK: fatal error LNK1123: failure during conversion to COFF: file invalid or corrupt.
+这是一个链接器错误，原因是VS用来COFF格式转换的工具cvtres.exe被破坏了，被破坏的原因是装了更新版本的VS，新的.Net
+ Framework里自带一个更新的cvtres.exe，解决方法，将VS2010里原来的两个cvtres.exe删掉或改名就好了，文件夹为
+C:\(vs2010安装文件夹)\VC\bin\cvtres.exe和C:\(vs2010安装文件夹)\VC\bin\amd64\cvtres.exe。
+
+6. 错误: C2065 "IDC_...": undeclared identifier.
+在`Resourse.h`文件里看看控件ID的定义是不是有问题。

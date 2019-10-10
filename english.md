@@ -18,3 +18,6 @@ specified 指定
 placeholder 占位符
 
 后缀: -wise，以……的方式。
+
+ellipse 椭圆
+from scratch 从头开始，白手起家
