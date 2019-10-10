@@ -24,3 +24,6 @@ C:\(vs2010安装文件夹)\VC\bin\cvtres.exe和C:\(vs2010安装文件夹)\VC\bin
 
 6. 错误: C2065 "IDC_...": undeclared identifier.
 在`Resourse.h`文件里看看控件ID的定义是不是有问题。
+
+7. 警告: C6387 `<argument>` may be `<value>`: this does not adhere to the specification for the function `<function name>`.
+函数的批注中有`_In_`，表示该参数必须有效，所以不能为`NULL`，解决方法为在前面用判断语句判断该值是否为`NULL`，注：该判断语句必须和使用该参数的函数在同一代码块。
