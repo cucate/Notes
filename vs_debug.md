@@ -27,3 +27,7 @@ C:\(vs2010安装文件夹)\VC\bin\cvtres.exe和C:\(vs2010安装文件夹)\VC\bin
 
 7. 警告: C6387 `<argument>` may be `<value>`: this does not adhere to the specification for the function `<function name>`.
 函数的批注中有`_In_`，表示该参数必须有效，所以不能为`NULL`，解决方法为在前面用判断语句判断该值是否为`NULL`，注：该判断语句必须和使用该参数的函数在同一代码块。
+
+8. 警告：C26115 Failing to release lock `<lock>` in function `<func>`.
+程序中可能会造成孤立锁，如使用`EnterCriticalSection`后，后面根据条件判断使用`LeaveCriticalSection`时，部分条件没有使用该语句，导致满足该条件时，
+没有开锁，从而形成孤立锁。
