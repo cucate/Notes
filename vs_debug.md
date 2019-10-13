@@ -28,9 +28,12 @@ C:\(vs2010安装文件夹)\VC\bin\cvtres.exe和C:\(vs2010安装文件夹)\VC\bin
 7. 警告: C6387 `<argument>` may be `<value>`: this does not adhere to the specification for the function `<function name>`.
 函数的批注中有`_In_`，表示该参数必须有效，所以不能为`NULL`，解决方法为在前面用判断语句判断该值是否为`NULL`，注：该判断语句必须和使用该参数的函数在同一代码块。
 
-8. 警告：C26115 Failing to release lock `<lock>` in function `<func>`.
+8. 警告: C26115 Failing to release lock `<lock>` in function `<func>`.
 程序中可能会造成孤立锁，如使用`EnterCriticalSection`后，后面根据条件判断使用`LeaveCriticalSection`时，部分条件没有使用该语句，导致满足该条件时，
 没有开锁，从而形成孤立锁。
 
 9. 调试过程中出现"read access violation"。
 编译可以通过但运行不了，调试出现这个异常，可能原因是在局部重新定义了和成员变量同名的对象，导致成员变量在局部被隐藏，而局部变量离开作用域就消失了。
+
+10. 错误: C2440: 'type cast' : cannot convert from 'void (__thiscall CXXXView::*)(unsigned int,long)' to 'long (__thiscall CWnd::*)(unsigned int,long)'
+ON_MESSAGE()宏对应的消息函数的原型返回值要为`long`或`LRESULT`，不能使用`void`。
