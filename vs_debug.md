@@ -31,3 +31,6 @@ C:\(vs2010安装文件夹)\VC\bin\cvtres.exe和C:\(vs2010安装文件夹)\VC\bin
 8. 警告：C26115 Failing to release lock `<lock>` in function `<func>`.
 程序中可能会造成孤立锁，如使用`EnterCriticalSection`后，后面根据条件判断使用`LeaveCriticalSection`时，部分条件没有使用该语句，导致满足该条件时，
 没有开锁，从而形成孤立锁。
+
+9. 调试过程中出现"read access violation"。
+编译可以通过但运行不了，调试出现这个异常，可能原因是在局部重新定义了和成员变量同名的对象，导致成员变量在局部被隐藏，而局部变量离开作用域就消失了。
